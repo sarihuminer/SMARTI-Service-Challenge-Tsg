@@ -1,0 +1,44 @@
+{
+  "entitiesRequest": [
+    {
+      "source": "webnit",
+      "entityType": "person",
+      "tz": 3111,
+      "name": "dddd",
+      "age": 30,
+      "address": {
+        "city": "vv",
+        "region": "i"
+      }
+    },
+    {
+      "source": "c2",
+      "entityType": "person",
+      "tz": 2225,
+      "name": "sasa",
+      "age": 50,
+      "address": {
+        "city": "ee",
+        "region": "i"
+      }
+    },
+    {
+      "source": "c2",
+      "entityType": "car",
+      "color": "green",
+      "name": "subaro"
+    },
+    {
+      "source": "webnit",
+      "entityType": "car",
+      "color": "yellow",
+      "name": "subaro"
+    },
+    {
+      "source": "webnit",
+      "entityType": "car",
+      "cost": 30000,
+      "name": "subaro"
+    }
+  ]
+}

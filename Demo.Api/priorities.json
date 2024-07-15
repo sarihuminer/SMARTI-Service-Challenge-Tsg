@@ -1,0 +1,22 @@
+{
+  "priorities": [
+    {
+      "entityType": "person",
+      "priorities": {
+        "tz": [ "webint", "c2" ],
+        "name": [ "webint", "c2" ],
+        "age": [ "c2", "webint" ],
+        "address": {
+          "city": [ "c2", "webint" ],
+          "region": [ "webint", "c2" ]
+        }
+      }
+    },
+    {
+      "entityType": "car",
+      "priorities": {
+        "color": [ "webint", "c2" ]
+      }
+    }
+  ]
+}

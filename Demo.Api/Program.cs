@@ -1,4 +1,5 @@
 using Demo.Application;
+using Demo.Application.Interfaces;
 using Demo.Repositories;
 using FluentValidation;
 using FluentValidation.AspNetCore;
@@ -29,6 +30,7 @@ builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 //add rebbit service if there
 builder.Services.AddApplicationFactory();
 builder.Services.AddRepositoriesFactory();
+
 //add swagger
 builder.Services.AddSwaggerGen(c =>
 {
@@ -46,6 +48,10 @@ builder.Services.AddCors(options =>
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var app = builder.Build();
+
+//run the prioritySetting
+var prioritySettingsService = app.Services.GetService<IPrioritySettingsService>();
+prioritySettingsService.LoadPrioritySettingsAsync();
 
 // Configure the HTTP request pipeline.
 IWebHostEnvironment env = app.Environment;

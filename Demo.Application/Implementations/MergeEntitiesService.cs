@@ -29,7 +29,7 @@ namespace Demo.Application.Implementations
             if (prioritySettings == null)
                 return null;
 
-            return MergeFields(entities, prioritySettings.Priorities);
+           return MergeFields(entities, prioritySettings.Priorities);
         }
 
         private Dictionary<string, object> MergeFields(List<Entity> entities, Dictionary<string, object> priorities)

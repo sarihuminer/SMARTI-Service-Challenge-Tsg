@@ -2,6 +2,7 @@
 using Demo.Domain.Model.Data;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -24,9 +25,18 @@ namespace Demo.Application.Implementations
 
         public async Task LoadPrioritySettingsAsync()
         {
-            var json = await File.ReadAllTextAsync(_path);
-            var settings = JsonConvert.DeserializeObject<PrioritySettings>(json);
-            _prioritySettings = settings.Entities.ToDictionary(e => e.EntityType);
+            try
+            {
+                var json = await File.ReadAllTextAsync(_path);
+                string data = JObject.Parse(json)["priorities"].ToString();
+                var settings = JsonConvert.DeserializeObject<List<EntityPriority>>(data);
+                _prioritySettings = settings.ToDictionary(e => e.EntityType);
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
         }
 
         public EntityPriority GetPrioritySettings(string entityType)
