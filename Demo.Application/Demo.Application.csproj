@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="DTOs\" />
     <Folder Include="EventHandlers\" />
-    <Folder Include="Implementations\" />
     <Folder Include="Interfaces\Proxies\" />
     <Folder Include="Interfaces\Repository\Repositories\" />
     <Folder Include="Mapping\" />

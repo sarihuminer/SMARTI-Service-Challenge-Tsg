@@ -86,9 +86,32 @@ app.UseCors(builder => builder
     
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseCors("AllowAll");
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
+app.Use(async (context, next) =>
+{
+    if (context.Request.Method == "OPTIONS")
+    {
+        var response = context.Response;
+        response.Headers.Add("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
+        response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        response.Headers.Add("Access-Control-Allow-Origin", "*"); // Changed to "*"
+        response.StatusCode = 200; // Return 200 status for OPTIONS request
+    }
+    else
+    {
+        await next.Invoke();
+    }
+});
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
 app.Run();

@@ -1,4 +1,6 @@
 ﻿using Demo.Application.Consumers;
+using Demo.Application.Implementations;
+using Demo.Application.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Demo.Application
@@ -7,8 +9,10 @@ namespace Demo.Application
     {
         public static IServiceCollection AddApplicationFactory(this IServiceCollection services)
         {
-            return services;
-               // .AddHostedService<RabbitMqConsumer>();
+            return services
+                .AddSingleton<IPrioritySettingsService, PrioritySettingsService>()
+                .AddTransient<IMergeEntitiesService,MergeEntitiesService>();
+            // .AddHostedService<RabbitMqConsumer>();
         }
     }
 }
