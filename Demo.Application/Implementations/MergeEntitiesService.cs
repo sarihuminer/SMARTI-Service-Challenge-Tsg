@@ -63,7 +63,7 @@ namespace Demo.Application.Implementations
                             Fields = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(((JsonElement)e.Fields[field.Key]).GetRawText())
                         })
                         .ToList();
-                      result[field.Key] = MergeFields(nestedEntities, nestedPriorities);
+                      result[field.Key] = MergeFields(nestedEntities, nestedPriorities.ToDictionary(pair => pair.Key, pair => (object)pair.Value));
                 }
             }
 
