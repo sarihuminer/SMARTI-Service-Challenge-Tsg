@@ -1,6 +1,6 @@
 [
   {
-    "source": "webnit",
+    "source": "webint",
     "entityType": "person",
     "fields": {
       "tz": 3111,
@@ -34,7 +34,7 @@
     }
   },
   {
-    "source": "webnit",
+    "source": "webint",
     "entityType": "car",
     "fields": {
       "color": "yellow",
@@ -42,7 +42,7 @@
     }
   },
   {
-    "source": "webnit",
+    "source": "webint",
     "entityType": "car",
     "fields": {
       "cost": 30000,

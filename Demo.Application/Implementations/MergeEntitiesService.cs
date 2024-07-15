@@ -1,10 +1,12 @@
 ﻿using Demo.Application.Interfaces;
 using Demo.Domain.Model.Data;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Demo.Application.Implementations
@@ -29,7 +31,7 @@ namespace Demo.Application.Implementations
             if (prioritySettings == null)
                 return null;
 
-           return MergeFields(entities, prioritySettings.Priorities);
+            return MergeFields(entities, prioritySettings.Priorities);
         }
 
         private Dictionary<string, object> MergeFields(List<Entity> entities, Dictionary<string, object> priorities)
@@ -50,23 +52,24 @@ namespace Demo.Application.Implementations
                         }
                     }
                 }
-                else if (field.Value is Dictionary<string, object> nestedPriorities)
+                else if (field.Value is Dictionary<string, List<string>> nestedPriorities)
                 {
                     var nestedEntities = entities
-                        .Where(e => e.Fields.ContainsKey(field.Key) && e.Fields[field.Key] is Dictionary<string, object>)
+                        .Where(e => e.Fields.ContainsKey(field.Key) && e.Fields[field.Key] is JsonElement)
                         .Select(e => new Entity
                         {
                             Source = e.Source,
                             EntityType = e.EntityType,
-                            Fields = e.Fields[field.Key] as Dictionary<string, object>
+                            Fields = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(((JsonElement)e.Fields[field.Key]).GetRawText())
                         })
                         .ToList();
-
-                    result[field.Key] = MergeFields(nestedEntities, nestedPriorities);
+                      result[field.Key] = MergeFields(nestedEntities, nestedPriorities);
                 }
             }
 
             return result;
         }
     }
+
+
 }
