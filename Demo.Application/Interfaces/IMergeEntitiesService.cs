@@ -9,6 +9,6 @@ namespace Demo.Application.Interfaces
 {
     public interface IMergeEntitiesService
     {
-        Dictionary<string, object> MergeEntities(List<Entity> entities);
+        List<Dictionary<string, object>> MergeEntities(List<Entity> entities);
     }
 }

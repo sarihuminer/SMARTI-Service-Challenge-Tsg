@@ -18,7 +18,7 @@ namespace Demo.Api.Controllers
         }
 
         [HttpPost("merge")]
-        public async Task<ActionResult<object>> MergeEntries([FromBody] List<Entity> entities)
+        public async Task<ActionResult<List<Dictionary<string, object>>>> MergeEntries([FromBody] List<Entity> entities)
         {
             try
             {

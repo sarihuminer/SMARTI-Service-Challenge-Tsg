@@ -21,20 +21,33 @@ namespace Demo.Application.Implementations
             _prioritySettingsService = prioritySettingsService;
         }
 
-        public Dictionary<string, object> MergeEntities(List<Entity> entities)
+        public List<Dictionary<string, object>> MergeEntities(List<Entity> entities)
         {
             if (!entities.Any())
                 return null;
 
-            var entityType = entities.First().EntityType;
-            var prioritySettings = _prioritySettingsService.GetPrioritySettings(entityType);
-            if (prioritySettings == null)
-                return null;
+            List<Dictionary<string, object>> mergeEntities = new List<Dictionary<string, object>>();
+            List<string> typeOfEnties = _prioritySettingsService.GetKeysOfPrioritySettings();
 
-            return MergeFields(entities, prioritySettings.Priorities);
+            foreach (var type in typeOfEnties)
+            {
+                try
+                {
+                    var prioritySettings = _prioritySettingsService.GetPrioritySettings(type);
+                    if (prioritySettings == null)
+                        return null;
+                    Dictionary<string, object> mergeItem = MergeFields(entities, prioritySettings.Priorities, type);
+                    mergeEntities.Add(mergeItem);
+                }
+                catch (Exception e)
+                {
+                    throw;
+                }
+            }
+            return mergeEntities;
         }
 
-        private Dictionary<string, object> MergeFields(List<Entity> entities, Dictionary<string, object> priorities)
+        private Dictionary<string, object> MergeFields(List<Entity> entities, Dictionary<string, object> priorities, string type)
         {
             var result = new Dictionary<string, object>();
 
@@ -44,8 +57,8 @@ namespace Demo.Application.Implementations
                 {
                     foreach (var source in sources)
                     {
-                        var entity = entities.FirstOrDefault(e => e.Source == source);
-                        if (entity != null && entity.Fields.ContainsKey(field.Key))
+                        var entity = entities.FirstOrDefault(e => e.Source == source && e.EntityType == type && e.Fields.ContainsKey(field.Key));
+                        if (entity != null)
                         {
                             result[field.Key] = entity.Fields[field.Key];
                             break;
@@ -63,7 +76,7 @@ namespace Demo.Application.Implementations
                             Fields = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(((JsonElement)e.Fields[field.Key]).GetRawText())
                         })
                         .ToList();
-                      result[field.Key] = MergeFields(nestedEntities, nestedPriorities.ToDictionary(pair => pair.Key, pair => (object)pair.Value));
+                    result[field.Key] = MergeFields(nestedEntities, nestedPriorities.ToDictionary(pair => pair.Key, pair => (object)pair.Value), type);
                 }
             }
 

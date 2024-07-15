@@ -11,5 +11,7 @@ namespace Demo.Application.Interfaces
     {
         Task LoadPrioritySettingsAsync();
         EntityPriority GetPrioritySettings(string entityType);
+
+        List<string> GetKeysOfPrioritySettings();
     }
 }

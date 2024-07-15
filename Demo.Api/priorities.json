@@ -15,7 +15,9 @@
     {
       "entityType": "car",
       "priorities": {
-        "color": [ "webint", "c2" ]
+        "color": [ "webint", "c2" ],
+        "name": [ "c2", "webint" ],
+        "cost": [ "c3", "webint" ]
       }
     }
   ]

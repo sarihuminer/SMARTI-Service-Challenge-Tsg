@@ -43,5 +43,10 @@ namespace Demo.Application.Implementations
         {
             return _prioritySettings.TryGetValue(entityType, out var priority) ? priority : null;
         }
+
+        public List<string> GetKeysOfPrioritySettings()
+        {
+           return new List<string>(_prioritySettings.Keys);
+        }
     }
 }
