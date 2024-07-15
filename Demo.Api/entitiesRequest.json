@@ -1,8 +1,8 @@
-{
-  "entitiesRequest": [
-    {
-      "source": "webnit",
-      "entityType": "person",
+[
+  {
+    "source": "webnit",
+    "entityType": "person",
+    "fields": {
       "tz": 3111,
       "name": "dddd",
       "age": 30,
@@ -10,10 +10,12 @@
         "city": "vv",
         "region": "i"
       }
-    },
-    {
-      "source": "c2",
-      "entityType": "person",
+    }
+  },
+  {
+    "source": "c2",
+    "entityType": "person",
+    "fields": {
       "tz": 2225,
       "name": "sasa",
       "age": 50,
@@ -21,24 +23,30 @@
         "city": "ee",
         "region": "i"
       }
-    },
-    {
-      "source": "c2",
-      "entityType": "car",
+    }
+  },
+  {
+    "source": "c2",
+    "entityType": "car",
+    "fields": {
       "color": "green",
       "name": "subaro"
-    },
-    {
-      "source": "webnit",
-      "entityType": "car",
+    }
+  },
+  {
+    "source": "webnit",
+    "entityType": "car",
+    "fields": {
       "color": "yellow",
       "name": "subaro"
-    },
-    {
-      "source": "webnit",
-      "entityType": "car",
+    }
+  },
+  {
+    "source": "webnit",
+    "entityType": "car",
+    "fields": {
       "cost": 30000,
       "name": "subaro"
     }
-  ]
-}
+  }
+]
