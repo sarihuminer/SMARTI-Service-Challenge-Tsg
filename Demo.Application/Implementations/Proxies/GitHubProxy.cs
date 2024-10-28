@@ -51,17 +51,17 @@ namespace Demo.Application.Implementations.Proxies
             return Configure<IGitHubProxy, GitHubProxy>(services, baseUrl);
         }
 
-        public async Task<List<GitHubRepositoryDto>> SearchRepositoriesAsync(string text)
+        public async Task<GitHubSearchResponse> SearchRepositoriesAsync(string text)
         {
             try
             {
-                var response = await GetAsync<List<GitHubRepositoryDto>>($"/search/repositories?q={text}");
+                var response = await GetAsync<GitHubSearchResponse>($"/search/repositories?q={text}");
 
                 if (response != null )
                 {
                     return response;
                 }
-                return new List<GitHubRepositoryDto>();
+                return null;
             }
             catch (Exception ex)
             {

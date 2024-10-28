@@ -34,7 +34,7 @@ namespace Demo.Application.Implementations
         //    return null;
         //}
 
-        public async Task<List<GitHubRepositoryDto>> SearchRepositoriesAsync(string text)
+        public async Task<GitHubSearchResponse> SearchRepositoriesAsync(string text)
         {
             try
             {

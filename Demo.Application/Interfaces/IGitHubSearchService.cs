@@ -9,6 +9,6 @@ namespace Demo.Application.Interfaces
 {
     public interface IGitHubSearchService
     {
-        Task<List<GitHubRepositoryDto>> SearchRepositoriesAsync(string text);
+        Task<GitHubSearchResponse> SearchRepositoriesAsync(string text);
     }
 }
