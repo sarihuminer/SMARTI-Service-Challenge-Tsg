@@ -1,5 +1,7 @@
 using Demo.Application;
+using Demo.Application.Implementations.Proxies;
 using Demo.Application.Interfaces;
+using Demo.Application.Interfaces.Proxies;
 using Demo.Repositories;
 using FluentValidation;
 using FluentValidation.AspNetCore;
@@ -30,6 +32,12 @@ builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 //add rebbit service if there
 builder.Services.AddApplicationFactory();
 builder.Services.AddRepositoriesFactory();
+
+var baseUrl = builder.Configuration["GitHubApi:BaseUrl"];
+var useDefaultCredentials = builder.Configuration.GetValue<bool>("GitHubApi:UseDefaultCredentials");
+
+// Register service with custom configuration
+builder.Services.Configure<IGitHubProxy, GitHubProxy>(baseUrl, useDefaultCredentials);
 
 //add swagger
 builder.Services.AddSwaggerGen(c =>

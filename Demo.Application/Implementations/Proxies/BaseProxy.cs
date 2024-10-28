@@ -46,20 +46,20 @@ namespace Demo.Application.Implementations.Proxies
             //}
         }
 
-        public IServiceCollection Configure<Tinterface, Timplementation>(IServiceCollection services, string baseUri) where Tinterface : class where Timplementation : class, Tinterface
+        public IServiceCollection Configure<Tinterface, Timplementation>(IServiceCollection services, string baseUrl) where Tinterface : class where Timplementation : class, Tinterface
         {
             services.AddHttpClient<Tinterface, Timplementation>(delegate (HttpClient client)
             {
-                client.BaseAddress = new Uri(baseUri);
+                client.BaseAddress = new Uri(baseUrl);
             });
             return services;
         }
 
-        public IServiceCollection Configure<Tinterface, Timplementation>(IServiceCollection services, string baseUri, bool isDefaultCredentials) where Tinterface : class where Timplementation : class, Tinterface
+        public IServiceCollection Configure<Tinterface, Timplementation>(IServiceCollection services, string baseUrl, bool isDefaultCredentials) where Tinterface : class where Timplementation : class, Tinterface
         {
             IHttpClientBuilder httpClientBuilder = services.AddHttpClient<Tinterface, Timplementation>(delegate (HttpClient client)
             {
-                client.BaseAddress = new Uri(baseUri);
+                client.BaseAddress = new Uri(baseUrl);
             });
             if (isDefaultCredentials)
             {
