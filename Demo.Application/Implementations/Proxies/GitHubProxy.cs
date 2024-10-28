@@ -1,6 +1,7 @@
 ﻿using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using Demo.Application.DTOs;
 using Demo.Application.Interfaces.Proxies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
@@ -16,6 +17,8 @@ namespace Demo.Application.Implementations.Proxies
         private readonly ILogger<GitHubProxy> _logger;
         private readonly string _baseUrl;
         private readonly string _className;
+
+        public GitHubProxy() : base() { }
 
         public GitHubProxy(HttpClient httpClient, IHttpContextAccessor httpContextAccessor, IConfiguration configuration, ILogger<GitHubProxy> logger)
         : base(httpClient, httpContextAccessor)
@@ -48,10 +51,23 @@ namespace Demo.Application.Implementations.Proxies
             return Configure<IGitHubProxy, GitHubProxy>(services, baseUrl);
         }
 
-        public string GetRequestUri(string endpoint)
+        public async Task<List<GitHubRepositoryDto>> SearchRepositoriesAsync(string text)
         {
-            //https://api.github.com/search/repositories?q=YOUR_SEARCH_KEYWORD
-            return new Uri(new Uri(_baseUrl), endpoint).ToString();
+            try
+            {
+                var response = await GetAsync<List<GitHubRepositoryDto>>($"/search/repositories?q={text}");
+
+                if (response != null )
+                {
+                    return response;
+                }
+                return new List<GitHubRepositoryDto>();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error while searching GitHub repositories: {ex.Message}");
+                throw;
+            }
         }
 
     }

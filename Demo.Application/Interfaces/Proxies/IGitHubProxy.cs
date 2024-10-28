@@ -9,8 +9,6 @@ namespace Demo.Application.Interfaces.Proxies
 {
     public interface IGitHubProxy
     {
-        //  Task<List<GitHubRepositoryDto>> SearchRepositoriesAsync(string keyword);
-
-         string GetRequestUri(string endpoint);
+        Task<List<GitHubRepositoryDto>> SearchRepositoriesAsync(string text);
     }
 }

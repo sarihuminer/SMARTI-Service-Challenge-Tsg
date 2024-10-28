@@ -38,15 +38,8 @@ namespace Demo.Application.Implementations
         {
             try
             {
-                var url = _gitHubProxy.GetRequestUri($"/search/repositories?q=YOUR_SEARCH_KEYWORD={text}");
-
-                var response = await _httpClient.GetFromJsonAsync<GitHubSearchResponse>(url);
-
-                if (response != null && response.Items != null)
-                {
-                    return response.Items;
-                }
-                return new List<GitHubRepositoryDto>();
+                var r = await _gitHubProxy.SearchRepositoriesAsync(text);
+                return r;
             }
             catch (Exception ex)
             {

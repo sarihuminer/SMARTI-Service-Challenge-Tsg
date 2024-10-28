@@ -19,22 +19,17 @@ namespace Demo.Application.Implementations.Proxies
 
         protected readonly IHttpContextAccessor _httpContextAccessor;
 
+
+
         private bool UseOldSerialize;
-        protected BaseProxy(HttpClient httpClient, string baseUrl)
+        protected BaseProxy(HttpClient httpClient, IHttpContextAccessor httpContextAccessor)
         {
             _httpClient = httpClient;
-            _baseUrl = baseUrl;
+            _baseUrl = Path.Combine(_httpClient.BaseAddress.AbsoluteUri); ;
         }
 
         public BaseProxy()
         {
-        }
-
-        public BaseProxy(HttpClient httpClient, IHttpContextAccessor httpContextAccessor)
-        {
-            _httpContextAccessor = httpContextAccessor;
-            _httpClient = httpClient;
-           // _httpClient.AddTraceIdentifier(httpContextAccessor);
         }
 
         public BaseProxy(HttpClient httpClient, IHttpContextAccessor httpContextAccessor, bool isJwtAuthentication)
@@ -72,7 +67,10 @@ namespace Demo.Application.Implementations.Proxies
 
         protected async Task<TReturn> GetAsync<TReturn>(string relativeUri)
         {
-            HttpResponseMessage res = await _httpClient.GetAsync($"{_baseUrl}/{relativeUri}");
+            //string url = Path.Combine(_httpClient.BaseAddress.AbsoluteUri, relativeUri);
+            string fetchUri = new Uri(new Uri(_httpClient.BaseAddress.AbsoluteUri), relativeUri).ToString();
+            _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("MyAppName/1.0");
+            HttpResponseMessage res = await _httpClient.GetAsync(fetchUri);
             if (res.IsSuccessStatusCode)
             {
                 return await res.Content.ReadFromJsonAsync<TReturn>();

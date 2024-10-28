@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Iac1tJVeoFaxNSi2zMAJp1DvH1MTycuLDX9vUDkBihD2wWkXSvQI7qZ3QWSAMHN4HJL7cDF3o29a3TePNlFM1g==",
+  "dgSpecHash": "8+QI0jQXVz95lqjsd6EM0fLTI6/cyPTznA7F88tmKhdA/kLXDhzLkyfuX8DcVfc+ZSlzgPFdkxV3Cqx9T0W4qg==",
   "success": true,
   "projectFilePath": "C:\\Users\\sari\\Documents\\מסמכים שרי\\תכנות\\מבחנים מראינות עבודה תכנות\\fnx\\api\\Demo.Repositories\\Demo.Repositories.csproj",
   "expectedPackageFiles": [
@@ -125,7 +125,7 @@
     "C:\\Users\\sari\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\sari\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\sari\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
-    "C:\\Users\\sari\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\sari\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\sari\\.nuget\\packages\\nuget.common\\6.6.1\\nuget.common.6.6.1.nupkg.sha512",
     "C:\\Users\\sari\\.nuget\\packages\\nuget.configuration\\6.6.1\\nuget.configuration.6.6.1.nupkg.sha512",
     "C:\\Users\\sari\\.nuget\\packages\\nuget.dependencyresolver.core\\6.6.1\\nuget.dependencyresolver.core.6.6.1.nupkg.sha512",
