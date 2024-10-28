@@ -22,3 +22,15 @@ C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינו
 C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\tsg-Test\Demo.Domain\obj\Debug\net7.0\refint\Demo.Domain.dll
 C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\tsg-Test\Demo.Domain\obj\Debug\net7.0\Demo.Domain.pdb
 C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\tsg-Test\Demo.Domain\obj\Debug\net7.0\ref\Demo.Domain.dll
+C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Domain\bin\Debug\net7.0\Demo.Domain.deps.json
+C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Domain\bin\Debug\net7.0\Demo.Domain.dll
+C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Domain\bin\Debug\net7.0\Demo.Domain.pdb
+C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Domain\obj\Debug\net7.0\Demo.Domain.csproj.AssemblyReference.cache
+C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Domain\obj\Debug\net7.0\Demo.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Domain\obj\Debug\net7.0\Demo.Domain.AssemblyInfoInputs.cache
+C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Domain\obj\Debug\net7.0\Demo.Domain.AssemblyInfo.cs
+C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Domain\obj\Debug\net7.0\Demo.Domain.csproj.CoreCompileInputs.cache
+C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Domain\obj\Debug\net7.0\Demo.Domain.dll
+C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Domain\obj\Debug\net7.0\refint\Demo.Domain.dll
+C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Domain\obj\Debug\net7.0\Demo.Domain.pdb
+C:\Users\sari\Documents\מסמכים שרי\תכנות\מבחנים מראינות עבודה תכנות\fnx\api\Demo.Domain\obj\Debug\net7.0\ref\Demo.Domain.dll

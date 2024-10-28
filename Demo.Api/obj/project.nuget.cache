@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4aDo/3Z1bop+7qTEa0pmiMHFRiAhuMlm8oI0sGkfa/x+jWwArNjsYl/3VyPQu7pWjzv35DMgpn75c2jwvudGcg==",
+  "dgSpecHash": "n4/TfbAMNSHWy+qIu0Ahd9wdibf38IMOSq9ruED4G5+4icnFF5hl4RCyubGXZwyMHOJ8bJUArHVQWFjxAbBJ6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sari\\Documents\\מסמכים שרי\\תכנות\\מבחנים מראינות עבודה תכנות\\tsg-Test\\Demo.Api\\Demo.Api.csproj",
+  "projectFilePath": "C:\\Users\\sari\\Documents\\מסמכים שרי\\תכנות\\מבחנים מראינות עבודה תכנות\\fnx\\api\\Demo.Api\\Demo.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sari\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\sari\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

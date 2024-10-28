@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sGtvfbzrWSairUWqbKMNrTCs7vQbS255rSg4+PUCgjnowFz2e3G+NEj1ewY27eg4rfI/ma4gdMNsUYNHXs/7OA==",
+  "dgSpecHash": "3Orwhpna2TiztCB83Zj7aIKX9x0DJqNlLS3C/FVuhmQpcDPhDd8fq/2Juk+/rVOxXyWLI4cmcW5EVFNmxUzcZg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sari\\Documents\\מסמכים שרי\\תכנות\\מבחנים מראינות עבודה תכנות\\tsg-Test\\Demo.Domain\\Demo.Domain.csproj",
+  "projectFilePath": "C:\\Users\\sari\\Documents\\מסמכים שרי\\תכנות\\מבחנים מראינות עבודה תכנות\\fnx\\api\\Demo.Domain\\Demo.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sari\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\sari\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -169,7 +169,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\sari\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\sari\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.runtime.extensions\\4.3.0\\system.runtime.extensions.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.runtime.handles\\4.3.0\\system.runtime.handles.4.3.0.nupkg.sha512",
